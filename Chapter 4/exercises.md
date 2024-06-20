@@ -104,7 +104,7 @@ mult :: Integer -> Integer -> Integer -> Integer
 mult = \x -> (\y -> (\z -> x * y * z))
 ```
 
-## 8 The Luhn algorithm is used to check bank card numbers for simple errors such as mistyping a digit. Define a `LuhnDouble :: Int -> Int` that doubles a digit and subtracts 9 if the result is greater than 9
+## 8 The Luhn algorithm is used to check bank card numbers for simple errors such as mistyping a digit. Define a `LuhnDouble :: Int -> Int` and a function luhn that decides if a four digit bank card number is valid
 
 ```haskell
 luhnDouble :: Int -> Int
