@@ -21,7 +21,7 @@ Done.
 
 ---
 
-1. Function names can start with a lower case letter.
+1. Function names must start with a lower case letter.
 2. Funtions written between arguments must be enclosed in single back quotes.
 3. Wrong indentation on last line.
 
