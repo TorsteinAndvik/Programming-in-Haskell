@@ -1,6 +1,8 @@
 # Chapter 4
 
-## 1. Using library functions, define `halve :: [a] -> ([a], [a])` that splits an even-lengthed list into two halves
+## Exercise 1
+
+Using library functions, define `halve :: [a] -> ([a], [a])` that splits an even-lengthed list into two halves
 
 ```haskell
 halve :: [a] -> ([a], [a])
@@ -15,41 +17,47 @@ halve' xs = splitAt n xs
 
 ```
 
-## 2. Define function `third :: [a] -> a` that returns the third element in a list that contains at least this many elements using
+## Exercise 2
+
+Define function `third :: [a] -> a` that returns the third element in a list that contains at least this many elements using
 
 ```haskell
 -- a. head and tail
-    third :: [a] -> a
-    third xs = head (tail (tail  xs))
+third :: [a] -> a
+third xs = head (tail (tail  xs))
 
 -- b. list indexing !!
-    third' :: [a] -> a
-    third' xs = xs !! 2
+third' :: [a] -> a
+third' xs = xs !! 2
 
 -- c. pattern matching
-    third'' :: [a] -> a
-    third'' (_: _: x:_) = x
+third'' :: [a] -> a
+third'' (_: _: x:_) = x
 ```
 
-## 3. Consider a function `safetail :: [a] -> [a]` that behaves in the same way as tail except that it maps the empty lit to itselft rather than prodcing an error. Using tail and the function `null :: [a] -> Bool` that decides if a list is empty or not, define safetail using
+## Exercise 3
+
+Consider a function `safetail :: [a] -> [a]` that behaves in the same way as tail except that it maps the empty lit to itselft rather than prodcing an error. Using tail and the function `null :: [a] -> Bool` that decides if a list is empty or not, define safetail using
 
 ```haskell
-    -- a. A conditional expression
-        safetail :: [a] -> [a]
-        safetail xs = if not(null xs) then tail xs else []
+-- a. A conditional expression
+safetail :: [a] -> [a]
+safetail xs = if not(null xs) then tail xs else []
 
-    -- b. guarded equations
-        safetail' :: [a] -> [a]
-        safetail' xs | null xs   = []
-                    | otherwise = tail xs
+-- b. guarded equations
+safetail' :: [a] -> [a]
+safetail' xs | null xs   = []
+            | otherwise = tail xs
 
-    -- c. pattern matching
-        safetail'' :: [a] -> [a]
-        safetail'' [] = []
-        safetail'' (_:xs) = xs
+-- c. pattern matching
+safetail'' :: [a] -> [a]
+safetail'' [] = []
+safetail'' (_:xs) = xs
 ```
 
-## 4. In a similar way to && in section 4.4, show how the disjunction operator || can be defined in four different ways using pattern matching
+## Exercise 4
+
+In a similar way to && in section 4.4, show how the disjunction operator || can be defined in four different ways using pattern matching
 
 ```haskell
 (||) :: Bool -> Bool -> Bool
@@ -74,7 +82,9 @@ b || c | b == c    = b
         | otherwise = True 
 ```
 
-## 5. Without using any other library functions or operators, show how the meaning of the following pattern matching definition for logical conjunction && can be formalised using conditional expressions. Hint: use two nested conditional expressions
+## Exercise 5
+
+Without using any other library functions or operators, show how the meaning of the following pattern matching definition for logical conjunction && can be formalised using conditional expressions. Hint: use two nested conditional expressions
 
 ```haskell
 -- Logical conjunction definition with pattern matching
@@ -85,7 +95,9 @@ _    && _    = False
 a && b = if a then (if b then True else False) else False
 ```
 
-## 6. Do the same for the following alternative definintion, and note the difference in the number of conditional expressions that are required
+## Exercise 6
+
+Do the same for the following alternative definintion, and note the difference in the number of conditional expressions that are required
 
 ```haskell
 True && b = b
@@ -94,7 +106,9 @@ True && _ = False
 a && b = if a then b else False
 ```
 
-## 7. Show how the meaning of the following curried function definition can be formalised in terms of lambda expressions
+## Exercise 7
+
+Show how the meaning of the following curried function definition can be formalised in terms of lambda expressions
 
 ```haskell
 mult :: Int -> Int -> Int -> Int
@@ -104,7 +118,9 @@ mult :: Integer -> Integer -> Integer -> Integer
 mult = \x -> (\y -> (\z -> x * y * z))
 ```
 
-## 8 The Luhn algorithm is used to check bank card numbers for simple errors such as mistyping a digit. Define a `LuhnDouble :: Int -> Int` and a function luhn that decides if a four digit bank card number is valid
+## Exercise 8
+
+The Luhn algorithm is used to check bank card numbers for simple errors such as mistyping a digit. Define a `LuhnDouble :: Int -> Int` and a function luhn that decides if a four digit bank card number is valid
 
 ```haskell
 luhnDouble :: Int -> Int
