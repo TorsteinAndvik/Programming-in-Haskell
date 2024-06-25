@@ -4,7 +4,8 @@
 
 How does the recursice version of the factorial function behave if applied to a negative arument such as (-1)? Modify the definition to prohibit negative arbuments by adding a guard to the recursive case.
 
-    For the function to return a value, it must reach the base case `fac 0`. When n starts below 0, n - 1 will never be 0, thus the funciton will never return a value.
+    For the function to return a value, it must reach the base case `fac 0`. 
+    When n starts below 0, n - 1 will never be 0, thus the funciton will never return a value.
 
 ```haskell
 -- Original function definition
