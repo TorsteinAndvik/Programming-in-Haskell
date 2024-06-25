@@ -230,21 +230,21 @@ Using the five-step process, construct the library functions that:
         take :: Int -> [a] -> [a]
 
     Step 2: enumerate the cases
-        take 0 xs =
-        take _ [] = 
+        take 0 xs     =
+        take _ []     = 
         take n (x:xs) =
 
     Step 3: define the simple cases
-        take 0 xs = []
-        take _ [] = []
+        take 0 xs     = []
+        take _ []     = []
 
     Step 4: define the other cases
         take n (x:xs) = x : take (n - 1) xs
 
     Step 5: generalise and simplify
         take :: Int -> [a] -> [a]
-        take 0 xs = []
-        take _ [] = []
+        take 0 xs     = []
+        take _ []     = []
         take n (x:xs) = x : take (n - 1) xs
 
 ### c. select the last element of a non-empty list
