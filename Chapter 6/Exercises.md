@@ -21,7 +21,7 @@ fac n | n > 0 = n * fac (n - 1)
 
 ## Exercise 2
 
-Define a recursive function `sumdown :: Int -> Int` that returns the sum of the nun-negative integers from a given value down to zero. For example `sumdown 3` should return the result 3 + 2 + 1 + 0 = 6
+Define a recursive function `sumdown :: Int -> Int` that returns the sum of the non-negative integers from a given value down to zero. For example `sumdown 3` should return the result 3 + 2 + 1 + 0 = 6
 
 ```haskell
 sumdown :: Int -> Int
